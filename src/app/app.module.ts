@@ -8,6 +8,8 @@ import { HttpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
     AppComponent,
     HomeComponent,
     ToolbarComponent,
-    AuthDialogComponent
+    AuthDialogComponent,
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
