@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "_heroku":      "https://www.angularonrails.com/deploy-rails-application-angular-cli-webpack-front-end/",
+    "start":        "http-server dist/",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
