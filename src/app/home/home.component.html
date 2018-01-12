@@ -1,8 +1,39 @@
 <div class="row">
   <div class="col s12">
-    <h1> Welcome</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat, dolor a aliquam ultrices, turpis nisl maximus justo, nec semper augue dolor vitae orci. Curabitur egestas posuere mauris. Quisque varius erat ac pharetra posuere. Nulla faucibus, ex in dictum porta, dui sapien vehicula nulla, nec venenatis enim purus quis justo. Sed luctus luctus aliquet. Etiam tristique feugiat risus in hendrerit. Mauris lobortis dui nec blandit fermentum. Pellentesque placerat, nunc pellentesque fringilla convallis, elit elit ultricies urna, in vehicula arcu metus efficitur metus. Integer efficitur ipsum sit amet risus tristique, congue molestie massa euismod.
-    </p>
+    
+    
+    <div *ngIf="!tokenAuthService.userSignedIn()" class="row"> 
+        <div class="row">
+            <div class="col s12 m10">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://images7.alphacoders.com/353/thumb-1920-353899.jpg">
+                  <span class="card-title">Login to beat superman</span>
+                </div>
+                <div class="card-content">
+                  <p>You are not signed in , Please Login or Register to access !</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="tokenAuthService.userSignedIn()" class="row"> 
+        <div class="row">
+            <div class="col s12 m10">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://3.bp.blogspot.com/--khI9KPnzR4/Vy-8oRGcBTI/AAAAAAAA0cc/G5iKHxLOgrwY9nwngPPOCu83mjey3-7uQCLcB/s1600/maaartha.jpeg">
+                  <span class="card-title">You are in system!</span>
+                </div>
+                <div class="card-content">
+                  <p>Login successfully, you are now defeat superman</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+   
   </div>
 </div>

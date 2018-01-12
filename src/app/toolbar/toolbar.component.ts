@@ -11,9 +11,13 @@ export class ToolbarComponent implements OnInit {
 
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-  constructor() { }
+  constructor(public tokenAuthService:Angular2TokenService) { }
 
   ngOnInit() {
+  }
+
+  onLogout(){
+    this.tokenAuthService.signOut();
   }
 
   presentAuthDialog(mode?: 'login'| 'register'){

@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 
 
@@ -19,13 +22,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ToolbarComponent,
     AuthDialogComponent,
     DashboardComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterializeModule,
-    HttpModule
+    HttpModule,FormsModule
   ],
   providers: [Angular2TokenService],
   bootstrap: [AppComponent]

@@ -7,18 +7,18 @@
 
       <ul class="right hide-on-med-and-down">
 
-        <li>
-          <a (click)="presentAuthDialog()" >LOGIN</a>
+        <li *ngIf="!tokenAuthService.userSignedIn()"> 
+          <a (click)="presentAuthDialog('login')" >LOGIN</a>
         </li>
-        <li>
+        <li *ngIf="!tokenAuthService.userSignedIn()"> 
           <a (click)="presentAuthDialog('register')">REGISTER</a>
         </li>
 
-        <li>
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
           <a >PROFILE</a>
         </li>
-        <li>
-          <a>LOGOUT</a>
+        <li *ngIf="tokenAuthService.userSignedIn()"> 
+          <a (click)="onLogout()">LOGOUT</a>
         </li>
 
       </ul>
