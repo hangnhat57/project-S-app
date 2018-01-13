@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -13,7 +14,7 @@ export class RegisterFormComponent implements OnInit {
     passwordConfirmation: ''
   };
   @Output() onFormResult = new EventEmitter<any>();
-  constructor(private tokenAuthSerivce:Angular2TokenService) { 
+  constructor(private authService:AuthService) { 
    
   }
   
@@ -22,7 +23,7 @@ export class RegisterFormComponent implements OnInit {
   }
   onSignUpSubmit(){
 
-    this.tokenAuthSerivce.registerAccount(this.signUpUser).subscribe(
+    this.authService.registerUser(this.signUpUser).subscribe(
 
         res => {
           if(res.status == 200){

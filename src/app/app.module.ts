@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -32,7 +33,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     MaterializeModule,
     HttpModule,FormsModule
   ],
-  providers: [Angular2TokenService],
+  providers: [Angular2TokenService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

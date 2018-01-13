@@ -2,23 +2,23 @@
 
   <nav  role="navigation">
 
-    <div class="nav-wrapper blue ">
-      <a [routerLink]="['']" id="logo-container" class="brand-logo">Timesheet</a>
+    <div class="nav-wrapper blue-grey darken-1 ">
+      <a style="margin-left:2%" [routerLink]="['']" id="logo-container" class="brand-logo"><i class="large material-icons">assignment</i>Timesheet</a>
 
       <ul class="right hide-on-med-and-down">
 
-        <li *ngIf="!tokenAuthService.userSignedIn()"> 
-          <a (click)="presentAuthDialog('login')" >LOGIN</a>
+        <li *ngIf="!(authService.userSignedIn$|async)"> 
+          <a (click)="presentAuthDialog('login')" >Login</a>
         </li>
-        <li *ngIf="!tokenAuthService.userSignedIn()"> 
-          <a (click)="presentAuthDialog('register')">REGISTER</a>
+        <li *ngIf="!(authService.userSignedIn$|async)"> 
+          <a (click)="presentAuthDialog('register')">Register</a>
         </li>
 
-        <li *ngIf="tokenAuthService.userSignedIn()"> 
-          <a >PROFILE</a>
+        <li *ngIf="(authService.userSignedIn$ | async)"> 
+          <a [routerLink]="['/profile']">Profile</a>
         </li>
-        <li *ngIf="tokenAuthService.userSignedIn()"> 
-          <a (click)="onLogout()">LOGOUT</a>
+        <li *ngIf="(authService.userSignedIn$|async)"> 
+          <a (click)="onLogout()">Logout</a>
         </li>
 
       </ul>
