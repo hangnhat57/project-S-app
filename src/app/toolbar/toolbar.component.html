@@ -1,32 +1,46 @@
-<div class="navbar-fixed">
+<mat-sidenav-container>
+        <div class="wrapper">
+          <mat-toolbar color="primary" style="flex=1;"><span style="cursor: pointer;" routerLink=""><mat-icon >note</mat-icon> </span>
+            <span class="branding spacer hidden-sm-down" style="
+            align-items:center;
+            margin:auto;"> ProjectS</span>
 
-  <nav  role="navigation">
-
-    <div class="nav-wrapper blue-grey darken-1 ">
-      <a style="margin-left:2%" [routerLink]="['']" id="logo-container" class="brand-logo"><i class="large material-icons">assignment</i>Timesheet</a>
-
-      <ul class="right hide-on-med-and-down">
-
-        <li *ngIf="!(authService.userSignedIn$|async)"> 
-          <a (click)="presentAuthDialog('login')" >Login</a>
-        </li>
-        <li *ngIf="!(authService.userSignedIn$|async)"> 
-          <a (click)="presentAuthDialog('register')">Register</a>
-        </li>
-
-        <li *ngIf="(authService.userSignedIn$ | async)"> 
-          <a [routerLink]="['/profile']">Profile</a>
-        </li>
-        <li *ngIf="(authService.userSignedIn$|async)"> 
-          <a (click)="onLogout()">Logout</a>
-        </li>
-
-      </ul>
-
-
-    </div>
-
-  </nav>
-  
-</div>
-<app-auth-dialog #authDialog></app-auth-dialog>
+            <button 
+                    mat-icon-button
+                    [matMenuTriggerFor]="toolbarUserMenu">
+              <mat-icon>input</mat-icon>
+            </button>
+            <mat-menu #toolbarUserMenu="matMenu" >
+              
+                <button mat-menu-item 
+                *ngIf="!(authService.userSignedIn$|async)"
+                routerLink="/login">
+                <mat-icon>redo</mat-icon>
+                <span>Log in</span>
+                </button>
+      
+                <button mat-menu-item *ngIf="!(authService.userSignedIn$|async)"
+                routerLink="/register">
+                    <mat-icon>launch</mat-icon>
+                    <span>Register</span>
+                </button>
+      
+                <button mat-menu-item *ngIf="(authService.userSignedIn$|async)"
+                routerLink="/profile">
+                    <mat-icon>person</mat-icon>
+                    <span>Profile</span>
+                  </button>
+      
+              <button *ngIf="(authService.userSignedIn$|async)" mat-menu-item (click)="onLogout()">
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Logout</span>
+              </button>
+            </mat-menu>
+      
+           
+          </mat-toolbar>
+       </div>
+        
+      
+      </mat-sidenav-container>
+           
