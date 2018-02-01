@@ -1,3 +1,9 @@
-<p>
-  dashboard works!
-</p>
+
+<form (ngSubmit)="onBookPost()" #f="ngForm" >
+  <mat-form-field >
+    <input matInput name="bookname" [(ngModel)]="bookname" >
+      
+  </mat-form-field>
+  <button mat-button type="submit" 
+          class="waves-effect waves-light btn blue right"> Login </button>
+</form>  
