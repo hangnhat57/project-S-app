@@ -1,0 +1,28 @@
+.card
+    position: relative;
+    .card-image
+        margin-bottom: 20px;
+        img
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+    .card-content
+        text-align: center;
+        font-size: 30px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        &:before
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            line-height: 100%;
+        &> div
+            display: inline-block;
+            vertical-align: middle;
+            color: white;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.77);
