@@ -1,39 +1,30 @@
 <div class="row">
   <div class="col s12">
-    
-    
-    <div style="margin:auto" *ngIf="!tokenAuthService.userSignedIn()" class="row"> 
-        <div class="row">
-            <div class="col s12 m10">
-              <div class="card">
-                <div class="card-image">
-                  <img src="https://images7.alphacoders.com/353/thumb-1920-353899.jpg">
-                  <span class="card-title">Login to beat superman</span>
-                </div>
-                <div class="card-content">
-                  <p>You are not signed in , Please Login or Register to access !</p>
-                </div>
-                
-              </div>
-            </div>
+    <div *ngIf="!tokenAuthService.userSignedIn()">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images7.alphacoders.com/353/thumb-1920-353899.jpg" alt="image-main">
+        </div>
+        <div class="card-content">
+          <div class="content-inside">
+            <span class="card-title">Login to beat superman</span>
+            <p>You are not signed in , Please Login or Register to access !</p>
           </div>
+        </div>
+      </div>
     </div>
-    <div  style="margin:auto" *ngIf="tokenAuthService.userSignedIn()" class="row"> 
-        <div class="row">
-            <div class="col s12 m10">
-              <div class="card">
-                <div class="card-image">
-                  <img src="https://3.bp.blogspot.com/--khI9KPnzR4/Vy-8oRGcBTI/AAAAAAAA0cc/G5iKHxLOgrwY9nwngPPOCu83mjey3-7uQCLcB/s1600/maaartha.jpeg">
-                  <span class="card-title">You are in system!</span>
-                </div>
-                <div class="card-content">
-                  <p>Login successfully, you are now defeat superman</p>
-                </div>
-                
-              </div>
-            </div>
+    <div *ngIf="tokenAuthService.userSignedIn()" >
+      <div class="card">
+        <div class="card-image">
+          <img src="https://3.bp.blogspot.com/--khI9KPnzR4/Vy-8oRGcBTI/AAAAAAAA0cc/G5iKHxLOgrwY9nwngPPOCu83mjey3-7uQCLcB/s1600/maaartha.jpeg" alt="image-main">
+        </div>
+        <div class="card-content">
+          <div class="content-inside">
+            <span class="card-title">You are in system!</span>
+            <p>Login successfully, you are now defeat superman</p>
           </div>
+        </div>
+      </div>
     </div>
-   
   </div>
 </div>
